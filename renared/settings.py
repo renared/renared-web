@@ -25,7 +25,7 @@ SECRET_KEY = 'xh-d@n7b8vbdzq##kx_7q0&*qyvy=uz$06u2hivi-s=*wjd6$$'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.renared.ddns.net', '.trucs.phear.fr']
+ALLOWED_HOSTS = ['.renared.ddns.net', '.trucs.phear.fr','176.135.233.1']
 
 
 # Application definition
