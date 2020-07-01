@@ -1,0 +1,13 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{% block title %}Le site de yan{% endblock %}</title>
+    </head>
+    <body>
+        <header>
+            <img src="{% static 'chefmini.png' %}" height=150 />
+        </header>
+        <section id="content">{% block content %}Contenu par défaut{% endblock %}</section>
+    </body>
+</html>
