@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>{{ poll.question_text }}</h2>
+<ul>
+    {% for choice in poll.choice_set.all %}
+    <li>{{ choice.choice_text }} -- {{ choice.votes }} votes</li>
+    {% endfor %}
+</ul>
+<div id="n_votes">{{ n_votes }} personnes ont voté</div>
+{% endblock %}

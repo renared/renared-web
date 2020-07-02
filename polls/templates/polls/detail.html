@@ -4,9 +4,15 @@
 <form action="{% url 'polls:vote' poll.id %}" method="post">
     {% csrf_token %}
     {% for choice in poll.choice_set.all %}
+    {% if poll.choice_type == 'UNIQUE' %}
         <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}">
+    {% elif poll.choice_type == 'MULTIPLE' %}
+        <input type="checkbox" name="choice[]" id="choice{{ forloop.counter }}" value="{{ choice.id }}">
+    {% endif %}
         <label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label><br>
     {% endfor %}
+    <input type="text" name="hash" placeholder="hash">
     <input type="submit" value="Vote">
+    <div id="n_votes">{{ n_votes }} personnes ont voté</div>
 </form>
 {% endblock %}

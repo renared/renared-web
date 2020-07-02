@@ -6,6 +6,7 @@
     </head>
     <body>
         <header>
+            {% block errormsg %}{{ errormsg }}{% endblock %}
             <img src="{% static 'chefmini.png' %}" height=150 />
         </header>
         <section id="content">{% block content %}Contenu par défaut{% endblock %}</section>

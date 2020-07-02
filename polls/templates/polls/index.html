@@ -1,2 +1,8 @@
 {% extends 'base.html' %}
-{% block content %}<p>Page d'accueil des sondages plutôt simple.</p>{% endblock %}
+{% block content %}
+    <ul>
+        {% for poll in polls %}
+        <a href="{% url 'polls:detail' poll.id %}"><li>{{ poll.question_text }}</li></a>
+        {% endfor %}
+    </ul>
+{% endblock %}
